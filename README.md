@@ -1,2 +1,2 @@
-# imc_dart
-Repositório de projeto de calculo de IMC para praticar os fundamentos da linguagem DART 
+A sample command-line application with an entrypoint in `bin/`, library code
+in `lib/`, and example unit test in `test/`.
