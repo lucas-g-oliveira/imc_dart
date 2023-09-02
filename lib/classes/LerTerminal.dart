@@ -2,26 +2,33 @@ import 'dart:io';
 
 import 'package:dart_imc/interfaces/IPessoa.dart' as pessoa;
 
+enum Read { nome, peso, altura }
+
 class LerTerminal {
-  final pessoa.PessoaInterface _pessoa;
+  late pessoa.PessoaInterface _pessoa;
 
-  LerTerminal(this._pessoa);
+  LerTerminal({required pessoa.PessoaInterface pessoa, required Read read}) {
+    _pessoa = pessoa;
+    Map<Read, Function> actions = {
+      Read.peso: _peso,
+      Read.nome: _nome,
+      Read.altura: _altura,
+    };
+    actions[read]!();
+  }
 
-  void nome() {
+  void _nome() {
     print("Qual o seu nome? ");
-    String? nome = stdin.readLineSync();
-    _pessoa.setNome(nome!);
+    _pessoa.setNome(stdin.readLineSync()!);
   }
 
-  void peso() {
+  void _peso() {
     print("Qual o seu peso? (Kg) ");
-    String? peso = stdin.readLineSync();
-    _pessoa.setPeso(peso!);
+    _pessoa.setPeso(stdin.readLineSync()!);
   }
 
-  void altura() {
-    print("Qual a sua altura? (metros) ");
-    String? altura = stdin.readLineSync();
-    _pessoa.setAltura(altura!);
+  void _altura() {
+    print("Qual a sua altura? (cm) ");
+    _pessoa.setAltura(stdin.readLineSync()!);
   }
 }

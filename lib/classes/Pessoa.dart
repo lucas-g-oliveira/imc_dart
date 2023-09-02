@@ -5,6 +5,7 @@ class Pessoa implements pessoa.PessoaInterface {
   double _peso = 0.0;
   double _altura = 0.0;
 
+  @override
   void setNome(String nome) {
     if (nome.length < 3) {
       throw Exception("'nome' precisa ter ao menos 3 letras!");
@@ -12,9 +13,10 @@ class Pessoa implements pessoa.PessoaInterface {
     _nome = nome;
   }
 
+  @override
   void setAltura(String altura) {
     try {
-      _altura = double.parse(altura);
+      _altura = double.parse(altura) / 100;
     } catch (err) {
       throw Exception("O valor de entrda para a 'altura' é inválido");
     }
@@ -24,6 +26,7 @@ class Pessoa implements pessoa.PessoaInterface {
     }
   }
 
+  @override
   void setPeso(String peso) {
     try {
       _peso = double.parse(peso);
