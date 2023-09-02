@@ -28,6 +28,6 @@ class CalcularIMC {
     } else {
       result = values.entries.where((e) => imc < e.value).first.key;
     }
-    return "Nome: ${_pessoa!.getName()} - Situação: $result";
+    return "Nome: ${_pessoa!.getName()} - IMC: ${imc.toStringAsFixed(2)} - Situação: $result";
   }
 }
