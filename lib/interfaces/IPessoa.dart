@@ -1,3 +1,4 @@
+// ignore: file_names
 abstract class PessoaInterface {
   String getName();
   double getPeso();
