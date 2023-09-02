@@ -1,5 +1,8 @@
-import 'package:dart_imc/dart_imc.dart' as dart_imc;
+import "dart:io";
+import "package:dart_imc/classes/Pessoa.dart";
+import 'package:dart_imc/classes/IMC.dart';
 
-void main(List<String> arguments) {
-  print('Hello world: ${dart_imc.calculate()}!');
+void main() {
+  Pessoa maria = Pessoa(nome: "Maria");
+  print(CalcularIMC(pessoa: maria).execute());
 }

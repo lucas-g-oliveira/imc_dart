@@ -1,5 +1,3 @@
-import 'dart:ffi';
-
 import 'package:dart_imc/interfaces/IPessoa.dart' as pessoa;
 
 class Pessoa implements pessoa.PessoaInterface {
@@ -30,7 +28,7 @@ class Pessoa implements pessoa.PessoaInterface {
     try {
       _peso = double.parse(peso);
     } catch (err) {
-      throw Exception("O valor de entrda para a 'altura' é inválido");
+      throw Exception("O valor de entrada para a 'altura' é inválido");
     }
     if (_peso <= 0) {
       throw Exception("'Peso' precisa ser maior que '0'!");
