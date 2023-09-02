@@ -16,7 +16,7 @@ class Pessoa implements pessoa.PessoaInterface {
   @override
   void setAltura(String altura) {
     try {
-      _altura = double.parse(altura) / 100;
+      _altura = double.parse(altura);
     } catch (err) {
       throw Exception("O valor de entrda para a 'altura' é inválido");
     }

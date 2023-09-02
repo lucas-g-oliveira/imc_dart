@@ -7,7 +7,7 @@ void main() {
 
   pessoa1.setNome(lerTerminal('Qual o seu nome?'));
   pessoa1.setPeso(lerTerminal('Qual o seu peso? (Kg)'));
-  pessoa1.setAltura(lerTerminal('Qual a sua altura? (mertos)'));
+  pessoa1.setAltura(lerTerminal('Qual a sua altura? (metros)'));
 
   print(CalcularIMC(pessoa: pessoa1).execute());
 }
