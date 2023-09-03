@@ -8,7 +8,7 @@ class Pessoa implements pessoa.PessoaInterface {
   @override
   void setNome(String nome) {
     if (nome.length < 3) {
-      throw Exception("'nome' precisa ter ao menos 3 letras!");
+      throw ArgumentError("'nome' precisa ter ao menos 3 letras!");
     }
     _nome = nome;
   }
@@ -18,11 +18,11 @@ class Pessoa implements pessoa.PessoaInterface {
     try {
       _altura = double.parse(altura);
     } catch (err) {
-      throw Exception("O valor de entrda para a 'altura' é inválido");
+      throw ArgumentError("O valor de entarda para a 'altura' é inválido");
     }
     if (_altura.isNaN) {
     } else if (_altura <= 0) {
-      throw Exception("'Altura' precisa ser maior que '0'!");
+      throw ArgumentError("'Altura' precisa ser maior que '0'!");
     }
   }
 
@@ -31,10 +31,10 @@ class Pessoa implements pessoa.PessoaInterface {
     try {
       _peso = double.parse(peso);
     } catch (err) {
-      throw Exception("O valor de entrada para a 'altura' é inválido");
+      throw ArgumentError("O valor de entrada para a 'peso' é inválido");
     }
     if (_peso <= 0) {
-      throw Exception("'Peso' precisa ser maior que '0'!");
+      throw ArgumentError("'Peso' precisa ser maior que '0'!");
     }
   }
 
